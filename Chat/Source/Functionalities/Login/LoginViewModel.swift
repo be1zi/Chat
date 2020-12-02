@@ -7,8 +7,15 @@
 
 import Foundation
 import FirebaseAuth
+import RxSwift
 
 public class LoginViewModel {
+    
+    //
+    // MARK: - Properties
+    //
+    
+    public let loginWithSuccess = PublishSubject<Bool>()
     
     //
     // MARK: - Methods
@@ -17,7 +24,11 @@ public class LoginViewModel {
     public func login() {
         
         Auth.auth().signInAnonymously { [weak self] (result, error) in
-            print(result?.user)
+            if let _ = error {
+                self?.loginWithSuccess.onNext(false)
+            } else {
+                self?.loginWithSuccess.onNext(true)
+            }
         }
     }
 }

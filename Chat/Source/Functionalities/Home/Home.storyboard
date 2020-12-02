@@ -16,9 +16,71 @@
                     <view key="view" contentMode="scaleToFill" id="hgp-9A-D9Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jHa-OR-PHP">
+                                <rect key="frame" x="0.0" y="792" width="414" height="104"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tp7-Qj-jtm">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTl-Lc-i6b">
+                                                <rect key="frame" x="16" y="16" width="73" height="30"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="1tz-SX-wG8"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="xqi-MU-PfQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                                <state key="normal" title="Logout">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rounded">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="logoutButtonAction:" destination="Gcc-c2-BN4" eventType="touchUpInside" id="bb9-ch-sbR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="OTl-Lc-i6b" firstAttribute="top" secondItem="Tp7-Qj-jtm" secondAttribute="top" constant="16" id="GEV-6N-w6q"/>
+                                            <constraint firstItem="OTl-Lc-i6b" firstAttribute="leading" secondItem="Tp7-Qj-jtm" secondAttribute="leading" constant="16" id="YzJ-Ax-A9Y"/>
+                                            <constraint firstAttribute="bottom" secondItem="OTl-Lc-i6b" secondAttribute="bottom" constant="16" id="uf3-DR-kMV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Tp7-Qj-jtm" firstAttribute="leading" secondItem="jHa-OR-PHP" secondAttribute="leading" id="0hE-df-4tt"/>
+                                    <constraint firstItem="Tp7-Qj-jtm" firstAttribute="top" secondItem="jHa-OR-PHP" secondAttribute="top" id="Pwe-db-fnE"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Tp7-Qj-jtm" secondAttribute="bottom" id="hek-U1-l8f"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tp7-Qj-jtm" secondAttribute="trailing" id="wbK-e3-S1U"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRedius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="xgw-0I-Ui5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xgw-0I-Ui5" firstAttribute="trailing" secondItem="jHa-OR-PHP" secondAttribute="trailing" id="76M-Dv-yks"/>
+                            <constraint firstItem="jHa-OR-PHP" firstAttribute="leading" secondItem="xgw-0I-Ui5" secondAttribute="leading" id="7No-G4-gJ9"/>
+                            <constraint firstAttribute="bottom" secondItem="jHa-OR-PHP" secondAttribute="bottom" id="d2i-AC-LIP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logoutButton" destination="OTl-Lc-i6b" id="bLS-2U-QWQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ne8-U2-yXG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -28,6 +90,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -21,6 +21,8 @@
 		3D72131C2577D2BE00FB58E9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D72131B2577D2BE00FB58E9 /* LoginViewController.swift */; };
 		3D7213242577D2CD00FB58E9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7213232577D2CD00FB58E9 /* Login.storyboard */; };
 		3D7213292577D2EA00FB58E9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7213282577D2EA00FB58E9 /* LoginViewModel.swift */; };
+		3D72133D2577DF8E00FB58E9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D72133C2577DF8E00FB58E9 /* UIView.swift */; };
+		3D72134B2577E3C000FB58E9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D72134A2577E3C000FB58E9 /* HomeViewModel.swift */; };
 		8D15ECCC0B81CF185CAD61E4 /* Pods_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8484A2389A4B41697EF7CF86 /* Pods_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		3D72131B2577D2BE00FB58E9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3D7213232577D2CD00FB58E9 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3D7213282577D2EA00FB58E9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		3D72133C2577DF8E00FB58E9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		3D72134A2577E3C000FB58E9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		72A10B413008060752B5CEE6 /* Pods-Chat-ChatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat-ChatUITests.debug.xcconfig"; path = "Target Support Files/Pods-Chat-ChatUITests/Pods-Chat-ChatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		783FD691E94AF2AE0AA41932 /* Pods-Chat-ChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat-ChatUITests.release.xcconfig"; path = "Target Support Files/Pods-Chat-ChatUITests/Pods-Chat-ChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8484A2389A4B41697EF7CF86 /* Pods_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +173,7 @@
 		3D7212E82577C2BD00FB58E9 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3D72133A2577DF7B00FB58E9 /* UI */,
 				3D7212ED2577C2DB00FB58E9 /* Functionalities */,
 				3D7212E92577C2C500FB58E9 /* Context */,
 			);
@@ -207,6 +212,7 @@
 			children = (
 				3D7212F32577C30800FB58E9 /* HomeViewController.swift */,
 				3D7212FB2577C33700FB58E9 /* Home.storyboard */,
+				3D72134A2577E3C000FB58E9 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -219,6 +225,22 @@
 				3D7213282577D2EA00FB58E9 /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		3D72133A2577DF7B00FB58E9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3D72133B2577DF7F00FB58E9 /* Extensions */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3D72133B2577DF7F00FB58E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3D72133C2577DF8E00FB58E9 /* UIView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		42ED33B10F9B8246F17087D9 /* Frameworks */ = {
@@ -486,8 +508,10 @@
 			files = (
 				3D72131C2577D2BE00FB58E9 /* LoginViewController.swift in Sources */,
 				3D7212AA2577ADB700FB58E9 /* AppDelegate.swift in Sources */,
+				3D72134B2577E3C000FB58E9 /* HomeViewModel.swift in Sources */,
 				3D7212AC2577ADB700FB58E9 /* SceneDelegate.swift in Sources */,
 				3D7213292577D2EA00FB58E9 /* LoginViewModel.swift in Sources */,
+				3D72133D2577DF8E00FB58E9 /* UIView.swift in Sources */,
 				3D7212F42577C30800FB58E9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

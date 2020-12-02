@@ -8,14 +8,14 @@ target 'Chat' do
   pod 'Firebase/Auth'
   pod 'Firebase/Messaging'
   pod 'Firebase/Crashlytics'
-
+  pod 'RxSwift', '~> 5.0'
+  pod 'RxCocoa', '~> 5.0'
+  
   target 'ChatTests' do
     inherit! :search_paths
-    # Pods for testing
   end
 
   target 'ChatUITests' do
-    # Pods for testing
   end
 
 end

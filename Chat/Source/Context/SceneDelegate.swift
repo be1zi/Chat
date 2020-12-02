@@ -54,17 +54,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func presentStartController() {
         
-        let viewController: UIViewController?
+        let viewController = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController()
+        let childView: UIViewController?
         
         if let _ = Auth.auth().currentUser {
-            viewController = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController()
+            childView = nil
         } else {
-            viewController = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController()
+            childView = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController()
         }
         
         guard let vc = viewController else { return }
         
         let rootNavigationController = UINavigationController(rootViewController: vc)
+        
+        if let childView = childView {
+            rootNavigationController.addChild(childView)
+        }
         self.window?.rootViewController = rootNavigationController
         self.window?.makeKeyAndVisible()
     }
