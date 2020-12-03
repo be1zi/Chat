@@ -58,7 +58,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let childView: UIViewController?
         
         if let _ = Auth.auth().currentUser {
-            childView = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController()
+            childView = UIStoryboard(name: "HomeList", bundle: nil).instantiateInitialViewController()
         } else {
             childView = nil
         }

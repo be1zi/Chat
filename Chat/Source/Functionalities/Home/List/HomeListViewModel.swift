@@ -1,5 +1,5 @@
 //
-//  HomeViewModel.swift
+//  HomeListViewModel.swift
 //  Chat
 //
 //  Created by Konrad Belzowski on 02/12/2020.
@@ -9,7 +9,7 @@ import Foundation
 import Firebase
 import RxSwift
 
-public class HomeViewModel {
+public class HomeListViewModel {
     
     //
     // MARK: - Properties

@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  HomeListViewController.swift
 //  Chat
 //
 //  Created by Konrad Belzowski on 02/12/2020.
@@ -9,15 +9,16 @@ import Foundation
 import UIKit
 import RxSwift
 
-public class HomeViewController: UIViewController {
+public class HomeListViewController: UIViewController {
     
     //
     // MARK: - Properties
     //
     
     @IBOutlet weak var logoutButton: LoadingButton!
-
-    private let viewModel = HomeViewModel()
+    @IBOutlet weak var addButton: UIButton!
+    
+    private let viewModel = HomeListViewModel()
     private let disposeBag = DisposeBag()
     
     //
@@ -68,5 +69,14 @@ public class HomeViewController: UIViewController {
     @IBAction func logoutButtonAction(_ sender: Any) {
         logoutButton.showLoading()
         viewModel.logout()
+    }
+    
+    @IBAction func addButtonAction(_ sender: Any) {
+    
+        guard let vc = UIStoryboard(name: "HomeAdd", bundle: nil).instantiateInitialViewController() else {
+            return
+        }
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

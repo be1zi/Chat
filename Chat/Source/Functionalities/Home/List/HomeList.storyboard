@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Home List View Controller-->
         <scene sceneID="0DL-oM-LAA">
             <objects>
-                <viewController id="Gcc-c2-BN4" customClass="HomeViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Gcc-c2-BN4" customClass="HomeListViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hgp-9A-D9Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,11 +45,30 @@
                                                     <action selector="logoutButtonAction:" destination="Gcc-c2-BN4" eventType="touchUpInside" id="eZv-5e-8QC"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgW-ua-6SP">
+                                                <rect key="frame" x="368" y="16.5" width="30" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="SgW-ua-6SP" secondAttribute="height" multiplier="1:1" id="tIG-3g-UcB"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                                <state key="normal" backgroundImage="plus.circle.fill" catalog="system">
+                                                    <color key="titleColor" systemColor="systemPurpleColor"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addButtonAction:" destination="Gcc-c2-BN4" eventType="touchUpInside" id="0Go-IZ-XgN"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="SgW-ua-6SP" secondAttribute="trailing" constant="16" id="24d-K3-jLf"/>
+                                            <constraint firstItem="SgW-ua-6SP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OTl-Lc-i6b" secondAttribute="trailing" priority="999" constant="16" id="5C0-ea-iYd"/>
                                             <constraint firstItem="OTl-Lc-i6b" firstAttribute="top" secondItem="Tp7-Qj-jtm" secondAttribute="top" constant="16" id="GEV-6N-w6q"/>
+                                            <constraint firstItem="SgW-ua-6SP" firstAttribute="height" secondItem="OTl-Lc-i6b" secondAttribute="height" id="R7A-vV-ENX"/>
                                             <constraint firstItem="OTl-Lc-i6b" firstAttribute="leading" secondItem="Tp7-Qj-jtm" secondAttribute="leading" constant="16" id="YzJ-Ax-A9Y"/>
+                                            <constraint firstItem="SgW-ua-6SP" firstAttribute="centerY" secondItem="OTl-Lc-i6b" secondAttribute="centerY" id="f93-bT-Rw8"/>
                                             <constraint firstAttribute="bottom" secondItem="OTl-Lc-i6b" secondAttribute="bottom" constant="16" id="uf3-DR-kMV"/>
                                         </constraints>
                                     </view>
@@ -80,6 +99,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="SgW-ua-6SP" id="XXm-qb-2La"/>
                         <outlet property="logoutButton" destination="OTl-Lc-i6b" id="Ufz-Jf-VMM"/>
                     </connections>
                 </viewController>
@@ -89,11 +109,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

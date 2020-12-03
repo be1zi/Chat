@@ -55,8 +55,8 @@ public class LoginViewController: UIViewController {
     }
     
     private func presentHomeController() {
-        
-        guard let viewController = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() else {
+                
+        guard let viewController = UIStoryboard(name: "HomeList", bundle: nil).instantiateInitialViewController() else {
             return
         }
         
