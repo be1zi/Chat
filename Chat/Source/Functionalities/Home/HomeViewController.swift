@@ -41,6 +41,11 @@ public class HomeViewController: UIViewController {
     
     private func showAlert() {
         
+        let buttonAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let alert = UIAlertController(title: "Error", message: "There was some problem with logout. Please try again later.", preferredStyle: .alert)
+        alert.addAction(buttonAction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     //
