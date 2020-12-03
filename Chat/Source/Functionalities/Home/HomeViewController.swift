@@ -15,7 +15,7 @@ public class HomeViewController: UIViewController {
     // MARK: - Properties
     //
     
-    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var logoutButton: LoadingButton!
 
     private let viewModel = HomeViewModel()
     private let disposeBag = DisposeBag()
@@ -50,6 +50,8 @@ public class HomeViewController: UIViewController {
     private func setupRx() {
         
         viewModel.logoutWithSuccess.subscribe(onNext: { [weak self] success in
+            self?.logoutButton.hideLoading()
+
             if success {
                 self?.exit()
             } else {
@@ -59,6 +61,7 @@ public class HomeViewController: UIViewController {
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
+        logoutButton.showLoading()
         viewModel.logout()
     }
 }

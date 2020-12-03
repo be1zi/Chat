@@ -23,11 +23,12 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tp7-Qj-jtm">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTl-Lc-i6b">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTl-Lc-i6b" customClass="LoadingButton" customModule="Chat" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="16" width="73" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="1tz-SX-wG8"/>
+                                                    <constraint firstAttribute="width" constant="73" id="aMh-J3-Hoa"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="xqi-MU-PfQ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -41,7 +42,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="logoutButtonAction:" destination="Gcc-c2-BN4" eventType="touchUpInside" id="bb9-ch-sbR"/>
+                                                    <action selector="logoutButtonAction:" destination="Gcc-c2-BN4" eventType="touchUpInside" id="eZv-5e-8QC"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -79,7 +80,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="logoutButton" destination="OTl-Lc-i6b" id="bLS-2U-QWQ"/>
+                        <outlet property="logoutButton" destination="OTl-Lc-i6b" id="Ufz-Jf-VMM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ne8-U2-yXG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

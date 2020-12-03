@@ -14,7 +14,7 @@ public class LoginViewController: UIViewController {
     // MARK: - Properties
     //
    
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginButton: LoadingButton!
     
     private let viewModel = LoginViewModel()
     private let disposeBag = DisposeBag()
@@ -27,6 +27,18 @@ public class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setupRx()
+    }
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     //
@@ -53,6 +65,8 @@ public class LoginViewController: UIViewController {
     private func setupRx() {
         
         viewModel.loginWithSuccess.subscribe(onNext: { [weak self] success in
+            self?.loginButton.hideLoading()
+
             if success {
                 self?.presentHomeController()
             } else {
@@ -62,6 +76,7 @@ public class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {
+        loginButton.showLoading()
         viewModel.login()
     }
 }
