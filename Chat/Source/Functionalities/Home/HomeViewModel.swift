@@ -22,12 +22,22 @@ public class HomeViewModel {
     //
     
     public func logout() {
-        do {
-            try Auth.auth().signOut()
-            logoutWithSuccess.onNext(true)
-        } catch {
-            logoutWithSuccess.onNext(false)
-            print(error)
+        
+        if let user = Auth.auth().currentUser {
+            user.delete { [weak self] error in
+                if let _ = error {
+                    self?.logoutWithSuccess.onNext(false)
+                } else {
+                    self?.logoutWithSuccess.onNext(true)
+                }
+            }
+        } else {
+            do {
+                try Auth.auth().signOut()
+                logoutWithSuccess.onNext(true)
+            } catch {
+                logoutWithSuccess.onNext(false)
+            }
         }
     }
 }
